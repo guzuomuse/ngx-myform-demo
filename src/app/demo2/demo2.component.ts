@@ -58,32 +58,25 @@ export class Demo2Component implements OnInit {
   models = [
     new InputModel({
       id: 'username',
-      label: {
-        html: 'username:',
-        class: ['label_class_1', 'label_class_2'],
-      },
+      label: 'username:(use custom class `label_class_1`)',
       validators: [
         { key: 'required', validator: Validators.required, message: 'username is required' },
         { key: 'minlength', validator: Validators.minLength(3), message: 'username must 3 chars at least' }
       ],
       wrappersClass: {
-        mainWrapper: ['test1', 'test_sub_1', 'test_sub_2'],
+        labelWrapper: ['label_class_1'],
       },
     }),
 
     new InputModel({
       id: 'age',
-      label: {
-        html: 'your age:'
-      },
+      label: 'your age:',
       disabled: true,
       value: "it's a secret :)"
     }),
     new InputModel({
       id: 'niceperson',
-      label: {
-        html: 'a nice persion?'
-      },
+      label: '<div style="color:blue;">a nice person?(html label support)</div>',
       value: 'definitly',
       attributes: {
         readonly: 'readonly',
@@ -91,9 +84,7 @@ export class Demo2Component implements OnInit {
     }),
     new InputModel({
       id: 'avatar',
-      label: {
-        html: 'avatar:'
-      },
+      label: 'avatar:',
       attributes: {
         type: 'file',
         multiple: 'multiple'
@@ -107,9 +98,8 @@ export class Demo2Component implements OnInit {
     new CheckboxGroupModel({
       id: 'intrests',
       // inline: false,
-      label: {
-        html: 'What do you like:'
-      },
+      label: 'what do you like:',
+
       options: [
         {
           id: 'checkbox_1',
@@ -142,9 +132,7 @@ export class Demo2Component implements OnInit {
       group: [
         new InputModel({
           id: 'password',
-          label: {
-            html: 'password:'
-          },
+          label: 'password:',
           // disabled: true,
           attributes: {
             type: 'password',
@@ -155,9 +143,8 @@ export class Demo2Component implements OnInit {
         }),
         new InputModel({
           id: 'repassword',
-          label: {
-            html: 're-password:'
-          },
+          label: 're-password:',
+
           attributes: {
             type: 'password',
           },
@@ -172,9 +159,8 @@ export class Demo2Component implements OnInit {
     }),
     new InputModel({
       id: 'email',
-      label: {
-        html: 'email:'
-      },
+      label: 'email:',
+
       prefix: {
         html: '@',
         class: ['input-group-addon'],
@@ -191,18 +177,16 @@ export class Demo2Component implements OnInit {
     }),
     new InputModel({
       id: 'phone',
-      label: {
-        html: 'phone number:',
-      },
+      label: 'phone number:',
+
       validators: [
         { key: 'required', validator: Validators.required, message: 'please fill the phone number' }
       ],
     }),
     new InputModel({
       id: 'verificationcode',
-      label: {
-        html: 'verification code:'
-      },
+      label: 'verifacation code:',
+
       validators: [{ key: 'required', validator: Validators.required, message: 'this is required' }],
       suffix: {
         html: '<button type="button" class="btn btn-success" onclick="alert(\'send me verificaton code!\');">send code</button>',
@@ -214,9 +198,8 @@ export class Demo2Component implements OnInit {
     }),
     new SelectModel({
       id: 'country',
-      label: {
-        html: 'country:'
-      },
+      label: 'country:',
+
       value: 'england',
       options: [
         { label: 'select one country', value: '' },
@@ -240,9 +223,7 @@ export class Demo2Component implements OnInit {
       attributes: {
         multiple: 'multiple',
       },
-      label: {
-        html: 'accupation:',
-      },
+      label: 'occupation:',
       validators: [{ key: 'required', validator: Validators.required, message: 'occupation is required' }],
       options: [
         { label: 'Programmer', value: 'programmer' },
@@ -253,9 +234,7 @@ export class Demo2Component implements OnInit {
     }),
     new RadiogroupModel({
       id: 'gender:',
-      label: {
-        html: 'gender:',
-      },
+      label: 'gender:',
       legend: {
         value: 'Radio Group Legend!',
       },
@@ -286,8 +265,8 @@ export class Demo2Component implements OnInit {
     },
     showErrorsOnSubmit: true,
     wrappersClass: {
-      mainWrapper: ['test1', 'test2', 'test3666', 'row'],
-      labelWrapper: ['label_class_1', 'label_class_2', 'col-3'],
+      mainWrapper: ['row'],
+      labelWrapper: ['global_label_class_1', 'col-3'],
       secondaryWrapper: ['col-9']
     },
   };

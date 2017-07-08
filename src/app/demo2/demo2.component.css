@@ -1,0 +1,8 @@
+:host /deep/ label.label_class_1 {
+  color: purple;
+  font-weight: 800;
+}
+
+:host /deep/ label.global_label_class_1 {
+  font-style: italic;
+}

@@ -1,4 +1,12 @@
 <br>
+<ngx-bootstrap-form [formConfig]="formConfig" (ngSubmit)="test_submit($event);" #myform (ngValueChange)='test_change($event);'>
+  <div class="form-group row">
+    <label class="col-3"></label>
+    <div class="col-9">
+      <button class="btn btn-primary" type="submit">submit</button>
+    </div>
+  </div>
+</ngx-bootstrap-form>
 <h6>
   <pre>
   this page'code is all the same as the demo1 except the <b>FormCOnfig</b>
@@ -12,20 +20,11 @@
     }{{ '}' }},
     showErrorsOnSubmit: true,
     wrappersClass: {{ '{' }} 
-      mainWrapper: ['test1', 'test2', 'test3666', 'row'],
-      labelWrapper: ['label_class_1', 'label_class_2', 'col-3'],
+      mainWrapper: ['row'],
+      labelWrapper: ['global_label_class_1', 'col-3'],
       secondaryWrapper: ['col-9']
     {{ '}' }},
   }{{ '}' }};
 </code>
 </pre>
 </h6>
-<br>
-<ngx-bootstrap-form [formConfig]="formConfig" (ngSubmit)="test_submit($event);" #myform (ngValueChange)='test_change($event);'>
-  <div class="form-group row">
-    <label class="col-3"></label>
-    <div class="col-9">
-      <button class="btn btn-primary" type="submit">submit</button>
-    </div>
-  </div>
-</ngx-bootstrap-form>
